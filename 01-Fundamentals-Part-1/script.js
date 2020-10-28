@@ -87,3 +87,15 @@ const isFullAge = ageSarah >= 18;
 console.log(isFullAge);
 
 console.log(now - 1990 > now - 2020);
+
+// Operator precedence
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+let a, b;
+
+a = b = 25 - 10 - 5;
+
+console.log(a, b);
+
+const avgAge = (ageJonas + ageSarah) / 2;
+console.log(avgAge);
