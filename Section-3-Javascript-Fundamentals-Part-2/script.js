@@ -101,3 +101,110 @@ const yearsTilRetirement = (birthYear, firstName) => {
 
 console.log(yearsTilRetirement(1991, 'Jonas'));
 console.log(yearsTilRetirement(1970, 'Mike'));
+
+// Arrays
+
+const friend1 = 'Michael';
+const freind2 = 'Steven';
+const friend3 = 'Peter';
+
+// Array creation
+const friends = ['Michael', 'Steven', 'Peter']
+console.log(friends);
+
+// Array creation 2nd method
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+//  Arrays are 0 based(index's starting value)
+console.log(friends[0]);
+console.log(friends[1]);
+
+
+// .length property to find out the number of elements in the array
+console.log(friends.length);
+
+
+// extract the last element in the array
+console.log(friends[friends.length - 1]);
+// JS expects an expression inside the []
+
+// mutating the array by assigning an element in the given index
+friends[2] = 'Jay'
+console.log(friends);
+// NOT POSSIBLE  friends = [‘Bob’, ‘John’, ‘Joe’];
+
+
+// Javascript arrays can hold all sorts of values
+const firstNm = 'Jonas'
+const jonas = [firstNm, 'Schmedtman', 2037 - 1991, 'teacher', friends]
+console.log(jonas);
+console.log(jonas.length);
+
+
+// Exercise
+function calcAgeJonas(birthYear) {
+  return 2037 - birthYear
+}
+
+const yrs = new Array(1991, 1984, 2008, 2020);
+
+console.log(calcAgeJonas(yrs));  //NaN
+
+console.log((years + 10));  // array of number + 10
+//will convert the whole array to a string with comma seperated value and then concatenate 10
+
+console.log((years - 10)); // array of numbers - 10 => NaN
+
+const age4 = calcAgeJonas(yrs[0])
+const age5 = calcAgeJonas(yrs[1])
+const age6 = calcAgeJonas(yrs[years[years.length - 1]])
+console.log(age4, age5, age6);
+
+const ages = [calcAgeJonas(yrs[0]), calcAgeJonas(yrs[1]), calcAgeJonas(yrs[years[years.length - 1]])]
+
+// Basic Array Method
+
+const frnds = ['Michael', 'Steven', 'Peter']
+
+// Adds element
+
+/// push() adds an element at the end of the array
+const newLength = frnds.push('Jay') 
+console.log(frnds);  // ['Micheal', 'Steven', 'Peter', 'Jay']
+console.log(newLength); // returns  the length: 4
+
+// unshift() to add an element at the beginning of the array and returns the length of the new array
+const length = frnds.unshift('John');
+console.log(frnds); // ['John', 'Micheal', 'Steven', 'Peter', 'Jay']
+console.log(length); // returns the length: 5
+
+// Removes element
+
+// pop()  will remove the last element of the array and will return the new element, not the length
+const popped = frnds.pop()
+console.log(frnds); //  ['John', 'Micheal', 'Steven', 'Peter']
+console.log(popped); // 'Jay'
+
+// shift() removes the first elemet from array and returns the element
+const shifted = frnds.shift()
+console.log(frnds); // ['Micheal', 'Steven', 'Peter']
+console.log(shifted); // 'John'
+
+
+// Searching for an element in an Array
+
+// The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+console.log(frnds.indexOf('Stevens'));  // 1
+console.log(frnds.indexOf('Bob'));  // -1
+
+//The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+console.log(frnds.includes('Steven'));  // true
+console.log(frnds.includes('Bob'));     // false
+
+// includes method can also be used with if ... else statement
+
+if(frnds.includes('Peter')) {
+  console.log("You have a friend named 'Peter'");
+}
+
