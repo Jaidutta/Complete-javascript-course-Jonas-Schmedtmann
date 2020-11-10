@@ -208,3 +208,21 @@ if(frnds.includes('Peter')) {
   console.log("You have a friend named 'Peter'");
 }
 
+// Array and Object comparison
+const jonasArray = [
+  'Jonas',
+  'Schmedtman',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+const jonas =  {
+  firstName: 'Jonas',
+  lastName: 'Schmedtman',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven']
+}
+
+// Objects consist of variables that belong together. With objects, the order is not important; they have key value pairs, separated by comma. The variables are called properties
