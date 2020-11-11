@@ -217,7 +217,7 @@ const jonasArray = [
   ['Michael', 'Peter', 'Steven']
 ];
 
-const jonas =  {
+const jonasObj =  {
   firstName: 'Jonas',
   lastName: 'Schmedtman',
   age: 2037 - 1991,
@@ -226,3 +226,113 @@ const jonas =  {
 }
 
 // Objects consist of variables that belong together. With objects, the order is not important; they have key value pairs, separated by comma. The variables are called properties
+
+
+// Retrieving objects: There are 2 ways
+
+// Accessing objects with dot(.) notation
+console.log(jonasObj.lastName);
+console.log(jonasObj['lastName']); // we can have any expression inside []
+
+const nameKey = 'Name';
+
+// with [] notation we can use any expression
+console.log(jonasObj['first' + nameKey])
+console.log(jonasObj['last' + nameKey])
+// NOT POSSIBLE console.log(jonasObj.'first' + name);
+// with the . notation we need the real/final property name; NOT the computed property name, as it appears in the object
+
+// when we need to first compute the property name, as in the previous examples, we must use the [] notation. In any other case, use the . notation
+
+// example
+const interestedIn = prompt('What do you want to know about Jonas? Choose from firstName, lastName, age, job and friends')
+console.log(jonasObj[interestedIn]);
+
+// if a property does not exist in an object  and we try to access it we get undefined
+
+// if the property exists, then print out the property
+if(jonasObj[interestedIn]) {
+  console.log(jonasObj[interestedIn]);
+} else {
+  console.log('Wrong result! Choose from firstName, lastName, age, job and friends');
+}
+
+// adding properties to an object with dot(.) and [] square brackent notation
+
+jonasObj.location = 'Portugal';
+jonasObj['twitter'] = '@jonasschmedtman'
+console.log(jonasObj);
+
+
+// challenge 
+// Jonas has 3 friends and his first friend is called Michael
+console.log(jonasObj.firstName + ' has ' + jonasObj.friends.length + ' friends and his first freind is called ' + jonasObj.friends[0]);
+
+//function in objects. Functions are just another type of value. If functions are values, then it could be the value of the key value pair
+
+const newJonasObj =  {
+  firstName: 'Jonas',
+  lastName: 'Schmedtman',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriverLicense: true,
+
+          // function expression
+  // calcAge: function(birthYear) {
+  //   return 2037 - birthYear
+  // }
+  
+  // calcAge: function() {
+  //   console.log(this);
+  //   return 2037 - this.birthYear
+  // }
+
+  calcAge: function() {
+    this.age = 2037 - this.birthYear
+    return this.age
+  },
+  
+  getSummary: function() {
+    return `${this.firstName} is a ${this.calcAge()} old teacher ${this.job}, and he has ${this.hasDriverLicense?  'a': 'no'} driver's license`
+  }
+
+}
+
+/*
+  // function expression
+  const calcAge = function(birthYear) {
+      return 2037 - birthYear
+  }
+
+  we are not allowed to use function declaration in an object
+  // function declaration
+  function calcAge(birthYear) {
+    return 2037 - birthYear
+  }
+
+  // any function that is attached to an object is called a method
+
+*/
+
+//console.log(newJonasObj.calcAge(1991));
+//console.log(newJonasObj['calcAge'](1991));
+
+
+//console.log(newJonasObj.calcAge());
+//console.log(newJonasObj.calcAge());
+//console.log(newJonasObj.calcAge());
+//console.log(newJonasObj.calcAge());
+
+console.log(newJonasObj.calcAge());
+
+console.log(newJonasObj.age);
+console.log(newJonasObj.age);
+
+// challenge
+// Print out "Jonas is a 46 year old teacher, and he has a/no driver's license"
+
+console.log(`${newJonasObj.firstName} is a ${newJonasObj.age} old teacher ${newJonasObj.job}, and he has ${newJonasObj.hasDriverLicense?  'a': 'no'} driver's license`);
+
+console.log(newJonasObj.getSummary());
+
