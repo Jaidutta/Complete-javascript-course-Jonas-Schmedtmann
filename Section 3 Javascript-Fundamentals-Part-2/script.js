@@ -336,3 +336,79 @@ console.log(`${newJonasObj.firstName} is a ${newJonasObj.age} old teacher ${newJ
 
 console.log(newJonasObj.getSummary());
 
+// for loops
+
+console.log('Lifting weights repetition 1');
+console.log('Lifting weights repetition 2');
+console.log('Lifting weights repetition 3');
+console.log('Lifting weights repetition 4');
+console.log('Lifting weights repetition 5');
+console.log('Lifting weights repetition 6');
+console.log('Lifting weights repetition 7');
+console.log('Lifting weights repetition 8');
+console.log('Lifting weights repetition 9');
+console.log('Lifting weights repetition 10');
+
+// for loops keeps running until the condition is TRUE
+for(let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+// Looping Arrays
+const newJonasArray = [
+  'Jonas',
+  'Schmedtman',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven']
+];
+
+// console.log(jonas[0]);
+// console.log(jonas[1]);
+// ...;
+// console.log(jonas[4]);
+// DOES NOT EXIST console.log(jonas[5]); 
+
+const types = []
+for(let i = 0; i < newJonasArray.length; i++) {
+  console.log(newJonasArray[i], typeof newJonasArray[i])
+  // types[i] = typeof newJonasArray[i]
+  types.push(typeof newJonasArray[i])
+}
+console.log(types);
+
+const newYears = [1991, 2007, 1969, 2020];
+const newAges = []
+
+for(let i = 0; i < newYears.length; i++) {
+  newAges.push(2037 - newYears[i])
+}
+console.log(newAges);
+
+// break and continue
+// continue to exit the current iteration of the loop and continue to the next one and break is used to  completely terminate the whole loop
+
+// continue example PRINTS ONLY STRING
+for(let i = 0; i < newJonasArray.length; i++) {
+  if(typeof newJonasArray[i] !== 'string') continue
+  console.log(newJonasArray[i], typeof newJonasArray[i]);
+}
+
+// BREAK example break with number
+for(let i = 0; i < newJonasArray.length; i++) {
+  if(typeof newJonasArray[i] === 'number') break
+  console.log(newJonasArray[i], typeof newJonasArray[i]);
+}
+
+// looping backward
+for(let i = newJonasArray.length - 1; i >= 0; i-- ) {
+  console.log(newJonasArray[i]);
+}
+
+// nested loop 3 different exercises with 5 reps each
+for(let exercise = 1; exercise < 4; exercise++) {
+  for(let repetition = 1; repetition < 6; repetition++) {
+    console.log(`Exercise: ${exercise} Lifiting repetition: ${repetition}`);
+  }
+}
+
